@@ -1,16 +1,25 @@
 @import "./utils/variables";
-@import "./base/reset";
 @import "./utils/mixins";
 @import "./utils/conteiner";
-@import "./layouts/menu";
 @import "./utils/visually-hidden";
-@import "./components/header";
-@import "./components/tittle-section";
-@import "./components/section-advantages";
-@import "./components/photo-section";
-@import "./components/team-section";
-@import "./components/regular-customers";
-@import "./components/footer";
-@import "./layouts/modal";
+@import "./base/reset";
+
+
+
 @import "./components/button-filter";
-@import "./components/product";
+@import "./components/menu";
+@import "./components/modal";
+@import "./components/form";
+
+
+@import "./layouts/header";
+@import "./layouts/footer";
+@import "./layouts/tittle-section";
+@import "./layouts/photo-section";
+@import "./layouts/team-section";
+@import "./layouts/section-advantages";
+@import "./layouts/regular-customers";
+@import "./layouts/product";
+
+
+

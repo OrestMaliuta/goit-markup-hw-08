@@ -31,7 +31,7 @@
     border-radius: 4px;
 
     transition-property: box-shadow;
-    transition-duration: $duration;
+    transition-duration: 250ms;
     transition-timing-function: $timing-function;
 
     &:hover,
