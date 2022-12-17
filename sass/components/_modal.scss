@@ -12,7 +12,18 @@
     
         }
 
-        
+            
+    transition-property: opacity, visibility;
+    transition-duration: 250ms;
+    transition-timing-function: $timing-function;
+
+    padding: 93px 15px;
+    overflow-y: scroll;
+
+    @include tablet {
+        padding: 207px 159px;
+    }
+                
 }
 
 
@@ -21,7 +32,10 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0.5);
+    transition-property: transform, opacity;
+    transition-duration: 250ms;
+    transition-timing-function: $timing-function;
 
     padding: 20px;
     min-width: 528px;
@@ -32,30 +46,53 @@
         0px 1px 3px rgba(0, 0, 0, 0.12),
         0px 1px 1px rgba(0, 0, 0, 0.14),
         0px 2px 1px rgba(0, 0, 0, 0.2);
-
+   
        & h2 {
-            font-family: 'Roboto';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 20px;
-            line-height: 23px;
-            text-align: center;
-            letter-spacing: 0.03em;
-    
-            color: #212121;
-            margin-bottom: 12px;
+                margin-bottom: 12px;
+            
+                font-weight: 700;
+                font-size: 20px;
+                line-height: calc(30 / 20);
+                text-align: center;
+                color: $tittle-text-color;
+                
+                @include mobile {
+                    min-width: 350px;
+                }
+            
+                @include desktop {
+                    max-width: 448px;
+                    line-height: calc(23 / 20);
+                }
+            }
         }
 
+           
+
+            
+.modal {               
+            @include mobile {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 450px;
+            width: 100%;
+
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+                 }
+
+            @include desktop {
+                min-height: 581px;
+                min-width: 528px;
+            }
 }
 
 
 
 
 
-.modal-close-item {
-    display: flex;
-    justify-content: end;
-}
 
 .modal-close-btn {
         display: flex;
@@ -181,13 +218,46 @@
                     transition: 250ms $timing-function;
                 }
 
+
+
+                @include mobile {
+                    min-width: 370px;
+                }
+
+                @include desktop {
+                    font-size: 12px;
+                    line-height: calc(14 / 12);
+                    min-width: 448px;
+                }
+
+                &::placeholder {
+                    font-size: 14px;
+                    line-height: calc(16 / 14);
+                    letter-spacing: 0.01em;
+
+                    color: rgba(117, 117, 117, 0.5);
+
+                    @include desktop {
+                        font-size: 12px;
+                        line-height: calc(14 / 12);
+                    }
+                }
+
 }
 
 .input-wrap {
     position: relative;
     margin-top: 4px;
     margin-bottom: 10px;
-}
+    width: 100%;
+    
+  
+
+    display: flex;
+    flex-direction: column;
+}   
+
+
 
 .modal-icons {
     width: 12px;
@@ -196,6 +266,15 @@
     left: 12px;
     top: 50%;
     transform: translate(-0%, -60%);
+
+    @include mobile {
+            min-width: 370px;
+        }
+    
+        @include desktop {
+            min-width: 448px;
+        }
+    
 }
 
 /*--------------------------------Checkbox---------------------------------*/
@@ -229,7 +308,10 @@
                 justify-content: center;
                 fill: transparent;
             }
-
+    @include desktop {
+        font-size: 14px;
+        line-height: calc(24 / 24);
+    }
 
 
 }
@@ -271,6 +353,10 @@
 
     color: $accent-color;
     text-decoration: underline;
+        @include desktop {
+            font-size: 14px;
+            line-height: calc(24 / 14);
+        }
 }
 
 
@@ -297,7 +383,7 @@
     margin-left: auto;
     margin-right: auto;
     border: none;
-    width: 200px;
+    min-width: 200px;
     height: 50px;
     padding: 10px 52px;
     margin-top: 40px;
@@ -307,6 +393,15 @@
                 background-color: steelblue;
                 transition: 250ms $timing-function;
             }
+
+
+
+                         
+                         
+            
+                         
+                        
+                        
 
 }
 

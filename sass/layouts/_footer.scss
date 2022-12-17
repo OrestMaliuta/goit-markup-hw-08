@@ -159,11 +159,33 @@
     height: 24px;
 }
 
-
+.subscribe-tg { 
+    
+            @include max-mobile {
+                width: 100%;
+            }
+}
 
 .subscribe-tg-form {
     margin-left: 93px;
     width: auto;
+    
+            @include max-mobile {
+                    width: 100%;
+                }
+            
+                                display: flex;
+                                flex-direction: column;
+                                gap: 20px;
+                                align-items: center;
+                
+                                @include desktop {
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: flex-end;
+                                    gap: 12px;
+                                }
+        
 }
 
 .subscribe-box {
