@@ -1,5 +1,8 @@
 @import "./utils/variables";
 @import "./base/reset";
+@import "./utils/mixins";
+@import "./utils/conteiner";
+@import "./layouts/menu";
 @import "./utils/visually-hidden";
 @import "./components/header";
 @import "./components/tittle-section";
@@ -8,6 +11,6 @@
 @import "./components/team-section";
 @import "./components/regular-customers";
 @import "./components/footer";
-@import "./components/modal";
+@import "./layouts/modal";
 @import "./components/button-filter";
 @import "./components/product";

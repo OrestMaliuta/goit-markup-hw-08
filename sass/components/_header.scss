@@ -3,18 +3,7 @@
 }
 
 .header-box {
-    display: flex;
-
-    &--conteiner { 
-        width: 1200px;
-        
-            padding: 0px 15px;
-            align-items: center;
-            margin-left: auto;
-            margin-right: auto;
-    }
-       
-       
+    display: flex;  
 }
 
 .header__logo-studio {
@@ -110,7 +99,28 @@
 
     & .site-nav__item+.site-nav__item {
             margin-left: 34px;
-        }
+    }
+
+    @include max-mobile { 
+        display: none;
+    }
+
+    @include tablet {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        margin-left: auto;
+        padding: 21px 0;
+    }
+
+    @include desktop {
+        flex-direction: row;
+        gap: 40px;
+
+        padding: 32px 0;
+    }
+                 
 }
 
 .contacts__mailto-link {
@@ -131,7 +141,30 @@
     &:hover , &:focus { 
         color: $accent-color;
         transition: 250ms $timing-function;
-    }
+    }       
+        @include tablet {
+            display: flex;
+            align-items: center;
+
+            font-weight: 500;
+            font-size: 12px;
+            line-height: calc(14 / 12);
+            letter-spacing: 0.02em;
+            color: $paragraf-text-color;
+
+            transition-property: color;
+            transition: 250ms $timing-function;
+
+            &:hover,
+            &:focus {
+                color: $accent-color;
+            }
+        }
+
+        @include desktop {
+            font-size: 14px;
+            line-height: calc(16 / 14);
+        }
 }
 
 .contacts__tel-link {
@@ -152,6 +185,29 @@
             color: $accent-color;
             transition: 250ms $timing-function;
         }
+            @include tablet {
+                display: flex;
+                align-items: center;
+
+                font-weight: 500;
+                font-size: 12px;
+                line-height: calc(14 / 12);
+                letter-spacing: 0.02em;
+                color: $paragraf-text-color;
+
+                transition-property: color;
+                transition: 250ms $timing-function;
+
+                &:hover,
+                &:focus {
+                    color: $accent-color;
+                }
+            }
+
+            @include desktop {
+                font-size: 14px;
+                line-height: calc(16 / 14);
+            }
 }
 
 
@@ -182,6 +238,39 @@
         fill: $accent-color;
         transition: 250ms $timing-function;
     }
+
+         @include tablet {
+             display: block;
+             margin-right: 8px;
+    
+             fill: currentColor;
+    
+             &.envelope {
+                 width: 14px;
+                 height: 10px;
+             }
+    
+             &.telephone {
+                 width: 10px;
+                 height: 14px;
+             }
+         }
+    
+         @include desktop {
+             margin-right: 10px;
+    
+             fill: currentColor;
+    
+             &.envelope {
+                 width: 16px;
+                 height: 12px;
+             }
+    
+             &.telephone {
+                 width: 10px;
+                 height: 16px;
+             }
+         }
 }
 
 

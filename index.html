@@ -14,7 +14,7 @@
 <body>
     
     <header class="header">
-            <div class="header-box  header-box--conteiner header-box--div-header">
+            <div class="conteiner header-box">
                     <a class="header__logo-studio" href="./index.html"><span class="header__logo-web">Web</span>Studio</a>
             
                     
@@ -35,7 +35,7 @@
                             <li class="contacts__item"> 
                                         <a href="mailto:info@devstudio.com" class="contacts__mailto-link">
                                         
-                                            <svg class="contacts__icons" width="20px" height="16px">
+                                            <svg class="contacts__icons envelope" width="20px" height="16px">
                                             
                                                 <use href="./images/icons.svg#icon-envelope"></use>
                                             
@@ -48,7 +48,7 @@
 
                             <li class="contacts__item"> 
                                     <a href="tel:+380961111111" class="contacts__tel-link">
-                                        <svg class="contacts__icons" width="20px" height="16px">
+                                        <svg class="contacts__icons telephone" width="20px" height="16px">
                                         
                                             <use href="./images/icons.svg#icon-smartphone"></use>
                                         
@@ -57,7 +57,12 @@
                                     </a>
                             </li>
                         </ul>
-                        
+
+                        <button class="menu-toggle js-open-menu" aria-expanded="false" aria-controls="mobile-menu">
+                                <svg width="40" height="40" aria-label="Перемикач мобільного меню">
+                                    <use class="menu-toggle__icon" href="./images/icons.svg#icon-menu"></use>
+                                </svg>
+                        </button>
             </div>
                 
     </header>
@@ -65,7 +70,7 @@
     <main>
         
         <section class="tittle-section section">
-            <h1 class="tittle-section__heading" >Ефективні рішення для<br> вашого бізнесу</h1>
+            <h1 class="conteiner tittle-section__heading" >Ефективні рішення для<br> вашого бізнесу</h1>
             <button data-modal-open type="button" class="tittle-section__button">Замовити послугу</button>
         </section>
 
@@ -137,14 +142,21 @@
 
         <!---Чим займаємося-->
         <section class="tittle-photo section">
-            <div class="conteiner-two">
+            <div class="conteiner conteiner-two">
         <h2>Чим ми займаємося</h2>
         <ul class="displayed-foto">
             <li class="displayed"> 
                 <div class="displayed-thumb">
                     <div class="box-bkg"><h3>Десктопні додатки</h3> </div>
-                     
-                    <img  src="./images/comp1.jpg" alt="робота за компютером" width="370">
+
+                    <img 
+                    srcset="
+                    ./images/mob-images/box1.jpg, 
+                    ./images/mob-images/box1@2x.jpg, 
+                    ./images/mob-images/box1@3x.jpg" 
+                    src="./images/box1.jpg"
+                    alt="робота за компютером"width="370">
+                   
     
                 </div>
             </li>
@@ -158,7 +170,9 @@
                 <div class="displayed-thumb">
                     <div class="box-bkg"><h3>Мобільні додатки</h3></div>
 
-                        <img  src="./images/comp2.jpg" alt="робота за компютером" width="370">
+                    <img
+                    srcset="./images/mob-images/box2.jpg 1x, ./images/mob-images/box2@2x.jpg 2x, ./images/mob-images/box2@3x.jpg 3x"
+                    src="./images/comp2.jpg" alt="робота за компютером" width="370">
                 </div>
             </li>
 
@@ -169,7 +183,8 @@
                         <h3>Дизайнерські рішення</h3>
                     </div>
             
-                    <img src="./images/comp3.jpg" alt="робота за компютером" width="370">
+                    <img srcset="./images/mob-images/box3.jpg 1x, ./images/mob-images/box3@2x.jpg 2x, ./images/mob-images/box3@3x.jpg 3x"
+                        src="./images/comp1.jpg" alt="робота за компютером" width="370">
                 </div>
             </li>
         </ul>
@@ -179,17 +194,35 @@
         <!--Наша команда-->
         <section  class="team section">
          
-            
+            <div class="conteiner">
 
                 <h2>Наша команда</h2>
            
                 <ul class="our-team">
                     
                     <li class="team-card">
+                    <picture>
+                        <source srcset="
+                                        ./images/mob-images/team1mob.jpg     1x,
+                                        ./images/mob-images/team1mob@2x.jpg  2x,
+                                        ./images/mob-images/team1mob@3x.jpg  3x "
+                                       media="(max-width: 767px)" />
+                        <source srcset="
+                                        ./images/mob-images/team1tabl.jpg     1x,
+                                        ./images/mob-images/team1tabl@2x.jpg  2x,
+                                        ./images/mob-images/team1tabl@3x.jpg  3x "
+                                       media="(min-width: 768px)" />
+                        <source srcset="
+                                        ./images/mob-images/team1desk.jpg     1x,
+                                        ./images/mob-images/team1desk@2x.jpg  2x,
+                                        ./images/mob-images/team1desk@3x.jpg  3x"
+                                       media="(min-width: 1200px)" />
+
+                        <img class="workers__img" src="./images/mob-images/team1mob.jpg" alt="Перший підозрюваний" width="270" height="260" />
+                    
+                        </picture>
+
                         
-                            
-                        
-                        <img src="./images/1.jpg" alt="фото робітника" width="270">
                         
                         
                         <div class="div-team-card">
@@ -245,8 +278,26 @@
                     
                     <li class="team-card"> 
 
-                        
-                            <img src="./images/2.jpg" alt="фото робітника" width="270">
+                        <picture>
+                            <source srcset="
+                                        ./images/mob-images/team2mob.jpg     1x,
+                                        ./images/mob-images/team2mob@2x.jpg  2x,
+                                        ./images/mob-images/team2mob@3x.jpg  3x "
+                                           media="(max-width: 767px)" />
+                            <source srcset="
+                                        ./images/mob-images/team2tabl.jpg     1x,
+                                        ./images/mob-images/team2tabl@2x.jpg  2x,
+                                        ./images/mob-images/team2tabl@3x.jpg  3x "
+                                           media="(min-width: 768px)" />
+                            <source srcset="
+                                        ./images/mob-images/team2desk.jpg     1x,
+                                        ./images/mob-images/team2desk@2x.jpg  2x,
+                                        ./images/mob-images/team2desk@3x.jpg  3x"
+                                    media="(min-width: 1200px)" />
+                                <img class="workers__img" src="./images/mob-images/team2mob.jpg" alt="Другий підозрюваний" width="270" height="260" />
+                            </picture>
+                            
+                           
 
                             <div class="div-team-card">
                             <h3>Ольга Рєпіна</h3>
@@ -299,8 +350,25 @@
                     </li>
                     
                     <li class="team-card"> 
-                        
-                            <img src="./images/3.jpg" alt="фото робітника" width="270">
+                        <picture>
+                            <source srcset="
+                                        ./images/mob-images/team3mob.jpg     1x,
+                                        ./images/mob-images/team3mob@2x.jpg  2x,
+                                        ./images/mob-images/team3mob@3x.jpg  3x"
+                                           media="(max-width: 767px)" />
+                            <source srcset="
+                                        ./images/mob-images/team3tabl.jpg     1x,
+                                        ./images/mob-images/team3tabl@2x.jpg  2x,
+                                        ./images/mob-images/team3tabl@3x.jpg  3x "
+                                           media="(min-width: 768px)" />
+                            <source srcset="
+                                        ./images/mob-images/team3desk.jpg     1x,
+                                        ./images/mob-images/team3desk@2x.jpg  2x,
+                                        ./images/mob-images/team3desk@3x.jpg  3x"
+                                           media="(min-width: 1200px)" />
+                            <img class="workers__img" src="./images/mob-images/team3mob.jpg" alt="Третій працівник посміхається" width="270" height="260" />
+                        </picture>
+                            
 
                             <div class="div-team-card">
                             <h3>Микола Тарасов</h3> 
@@ -353,8 +421,26 @@
                     </li>
                     
                     <li class="team-card"> 
-                        
-                            <img src="./images/4.jpg" alt="фото робітника"  width="270">
+                        <picture>
+                            <source srcset="
+                                        ./images/mob-images/team4mob.jpg     1x,
+                                        ./images/mob-images/team4mob@2x.jpg  2x,
+                                        ./images/mob-images/team4mob@3x.jpg  3x "
+                                            media="(max-width: 767px)" />
+                            <source srcset="
+                                        ./images/mob-images/team4tabl.jpg     1x,
+                                        ./images/mob-images/team4tabl@2x.jpg  2x,
+                                        ./images/mob-images/team4tabl@3x.jpg  3x "
+                                           media="(min-width: 768px)" />
+                            <source srcset="
+                                        ./images/mob-images/team4desk.jpg     1x,
+                                        ./images/mob-images/team4desk@2x.jpg  2x,
+                                        ./images/mob-images/team4desk@3x.jpg  3x"
+                                           media="(min-width: 1200px)" />
+                            <img class="workers__img" src="./images/mob-images/team4mob.jpg" alt="Четвертий працівник точно вбивця" width="270" height="260" />
+                        </picture>
+
+                            
                         <div class="div-team-card">
                                 <h3>Михайло Єрмаков</h3>
                                 <p>UI Designer</p>
@@ -408,73 +494,74 @@
                     </li>
                 
                 </ul>
-            
+            </div>
         </section>
 
         <section class="regular-customers section">
-            <h2>Постійні клієнти</h2>
+            <div class="conteiner">
+                <h2>Постійні клієнти</h2>
 
-            <ul class="regular-customers-list">
-                <li class="regular-customers-item">
-                    <a href="#" class="regular-customers-link">
-                        <svg class="regular-customers-icons">
-                            <use href="./images/icons.svg#icon-yaco"></use>
-                        </svg>
-                    </a>
+                <ul class="regular-customers-list">
+                    <li class="regular-customers-item">
+                        <a href="#" class="regular-customers-link">
+                            <svg class="regular-customers-icons">
+                                <use href="./images/icons.svg#icon-yaco"></use>
+                            </svg>
+                        </a>
 
-                </li>
+                    </li>
 
-                <li class="regular-customers-item">
-                    <a href="#" class="regular-customers-link">
-                        <svg class="regular-customers-icons">
-                            <use href="./images/icons.svg#icon-cotagline"></use>
-                        </svg>
-                    </a>
+                    <li class="regular-customers-item">
+                        <a href="#" class="regular-customers-link">
+                            <svg class="regular-customers-icons">
+                                <use href="./images/icons.svg#icon-cotagline"></use>
+                            </svg>
+                        </a>
 
-                </li>
+                    </li>
 
-                <li class="regular-customers-item">
-                    <a href="#" class="regular-customers-link">
-                        <svg class="regular-customers-icons">
-                            <use href="./images/icons.svg#icon-company"></use>
-                        </svg>
-                    </a>
+                    <li class="regular-customers-item">
+                        <a href="#" class="regular-customers-link">
+                            <svg class="regular-customers-icons">
+                                <use href="./images/icons.svg#icon-company"></use>
+                            </svg>
+                        </a>
 
-                </li>
+                    </li>
 
-                <li class="regular-customers-item">
-                    
-                    <a href="#" class="regular-customers-link">
-                        <svg class="regular-customers-icons">
-                            <use href="./images/icons.svg#icon-foster"></use>
-                        </svg>
-                    </a>
+                    <li class="regular-customers-item">
+                        
+                        <a href="#" class="regular-customers-link">
+                            <svg class="regular-customers-icons">
+                                <use href="./images/icons.svg#icon-foster"></use>
+                            </svg>
+                        </a>
 
-                </li>
+                    </li>
 
-                <li class="regular-customers-item">
-                    <a href="#" class="regular-customers-link">
-                        <svg class="regular-customers-icons">
-                            <use href="./images/icons.svg#icon-brand"></use>
-                        </svg>
-                    </a>
-                </li>
+                    <li class="regular-customers-item">
+                        <a href="#" class="regular-customers-link">
+                            <svg class="regular-customers-icons">
+                                <use href="./images/icons.svg#icon-brand"></use>
+                            </svg>
+                        </a>
+                    </li>
 
-                <li class="regular-customers-item">
-                    <a href="#" class="regular-customers-link">
-                    
-                        <svg class="regular-customers-icons" >
-                    
-                            <use href="./images/icons.svg#icon-companytagline"></use>
-                    
-                        </svg>
-                    </a>
+                    <li class="regular-customers-item">
+                        <a href="#" class="regular-customers-link">
+                        
+                            <svg class="regular-customers-icons" >
+                        
+                                <use href="./images/icons.svg#icon-companytagline"></use>
+                        
+                            </svg>
+                        </a>
 
-                </li>
+                    </li>
 
-            </ul>
+                </ul>
 
-
+            </div>
         </section>
 
 
@@ -482,7 +569,7 @@
 
 
     <footer class="footer">
-        <div class="conteiner-footer">
+        <div class="conteiner conteiner-footer">
             <div class="text-footer">
                 <a class="logo-studio-footer" href="/index.html"><span class="logo-web-footer">Web</span>Studio</a>
     
@@ -561,7 +648,7 @@
     
                     <label for="mail">Підпишіться на розсилку</label>
                     <div class="subscribe-box">
-                        <input type="email" name="mail" id="mail" required placeholder="Email">
+                        <input type="email" name="mail" id="mail" required placeholder="Email"   id="subscription">
     
     
                         <button type="submit">Підписатися
@@ -652,8 +739,57 @@
            
         </div>
     </div>
+            <div class="menu js-menu-container" id="mobile-menu">
+                <div class="menu__container">
+                    <button class="menu-toggle js-close-menu">
+                        <svg width="40" height="40" aria-label="Кнопка закриття мобільного меню">
+                            <use class="menu-toggle__icon" href="./images/icons.svg#icon-menu-close"></use>
+                        </svg>
+                    </button>
+                    <ul class="menu-links">
+                        <li lass="menu-links__item">
+                            <a class="menu-links__link" href="./index.html" target="_blank" rel="noopener noreferrer">Студія</a>
+                        </li>
+                        <li lass="menu-links__item">
+                            <a class="menu-links__link" href="./portfolio.html" target="_blank"
+                                rel="noreferrer noopener">Портфоліо</a>
+                        </li>
+                        <li lass="menu-links__item">
+                            <a class="menu-links__link" href="#" target="_blank" rel="noreferrer noopener">Контакти</a>
+                        </li>
+                    </ul>
 
+                    <ul class="menu-contacts">
+                        <li class="menu-contacts__item">
+                            <a href="mailto:info@devstudio.com" class="menu-contacts__link--address" target="_blank"
+                                rel="noreferrer noopener">info@devstudio.com
+                            </a>
+                        </li>
+                        <li class="menu-contacts__item">
+                            <a href="tel:+380961111111" class="menu-contacts__link--phone-number" target="_blank"
+                                rel="noreferrer noopener">+38 096 111 11 11
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="menu-socials">
+                        <li class="menu-socials__item">
+                            <a class="menu-socials__link" href="#" target="_blank" rel="noreferrer noopener">Instagram</a>
+                        </li>
+                        <li class="menu-socials__item">
+                            <a class="menu-socials__link" href="#" target="_blank" rel="noreferrer noopener">Twitter</a>
+                        </li>
+                        <li class="menu-socials__item">
+                            <a class="menu-socials__link" href="#" target="_blank" rel="noreferrer noopener">Facebook</a>
+                        </li>
+                        <li class="menu-socials__item">
+                            <a class="menu-socials__link" href="#" target="_blank" rel="noreferrer noopener">LinkedIn</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 <script src="./js/modal.js"></script>
+<script src="./js/mobile-menu.js"></script>
 </body>
 </html>
 
